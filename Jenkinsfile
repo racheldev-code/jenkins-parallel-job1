@@ -6,7 +6,7 @@ pipeline{
 				checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-oz', url: 'https://github.com/racheldev-code/jenkins-parallel-job1.git']]])
 			}
 		}
-		stages('parallel-job'){
+		stage('parallel-job'){
 			parallel{
 				stage('sub-job1'){
 					steps{
